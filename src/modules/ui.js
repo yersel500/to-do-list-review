@@ -1,5 +1,6 @@
 import { ulContainer, taskInput } from './selectors';
 import ArrayTask from './class-methods';
+import deleteIcon from '../assets/delete-icon.svg';
 
 // constant variables
 const CHECK = 'fa-square-check';
@@ -28,13 +29,6 @@ export function enableEdition(task) {
   edit = true;
 }
 
-export function eraseTask(e, index, task) {
-  if (e.target.classList.contains(`specific-${index}`)) {
-    enableEdition(task);
-    listofTasks.saveLocalStorage();
-  }
-}
-
 export function printTask({ tasks }) {
   while (ulContainer.firstChild) {
     ulContainer.removeChild(ulContainer.firstChild);
@@ -48,10 +42,9 @@ export function printTask({ tasks }) {
 
     const taskContainer = document.createElement('li');
     taskContainer.classList.add(`${index}`, 'list-unit', `${complete}`);
-    taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><i class="fa-regular fa-trash-can"></i><i class="fas fa-ellipsis-v dots"></i>`;
+    taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><img src=${deleteIcon} alt='Trash' class='fa-trash-can'><i class="fas fa-ellipsis-v dots"></i>`;
 
     ulContainer.appendChild(taskContainer);
-    taskContainer.onclick = (e) => eraseTask(e, index, task);
   });
 }
 
