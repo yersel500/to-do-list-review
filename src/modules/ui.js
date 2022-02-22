@@ -51,7 +51,7 @@ export function printTask({ tasks }) {
     taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><i class="fa-regular fa-trash-can"></i><i class="fas fa-ellipsis-v dots"></i>`;
 
     ulContainer.appendChild(taskContainer);
-    taskContainer.onclick = (e) => eraseTask(e, index, task, complete);
+    taskContainer.onclick = (e) => eraseTask(e, index, task);
   });
 }
 

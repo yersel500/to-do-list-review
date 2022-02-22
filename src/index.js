@@ -11,7 +11,7 @@ function saveTask(e) {
 }
 
 // Events
-function eventListeners() {
+const eventListeners = () => {
   taskInput.addEventListener('input', saveTask);
 }
 
@@ -39,6 +39,7 @@ ulContainer.addEventListener('click', (e) => {
   }
 });
 
+// Delete completed tasks
 btndeleteTask.addEventListener('click', () => {
   listofTasks.deleteCompletedTask();
   printTask(listofTasks);
