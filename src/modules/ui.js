@@ -1,11 +1,6 @@
-import { ulContainer, taskInput } from './selectors';
+import { taskInput } from './selectors';
 import ArrayTask from './class-methods';
-import deleteIcon from '../assets/delete-icon.svg';
-
-// constant variables
-const CHECK = 'fa-square-check';
-const UNCHECK = 'fa-square';
-const LINE_THROUGH = 'lineThrough';
+import printTask from './addTask';
 
 let edit = false;
 export const listofTasks = new ArrayTask();
@@ -29,26 +24,8 @@ export function enableEdition(task) {
   edit = true;
 }
 
-export function printTask({ tasks }) {
-  while (ulContainer.firstChild) {
-    ulContainer.removeChild(ulContainer.firstChild);
-  }
-
-  tasks.forEach((task) => {
-    const { description, complete, index } = task;
-
-    const DONE = complete ? CHECK : UNCHECK;
-    const LINE = complete ? LINE_THROUGH : '';
-
-    const taskContainer = document.createElement('li');
-    taskContainer.classList.add(`${index}`, 'list-unit', `${complete}`);
-    taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><img src=${deleteIcon} alt='Trash' class='fa-trash-can'><i class="fas fa-ellipsis-v dots"></i>`;
-
-    ulContainer.appendChild(taskContainer);
-  });
-}
-
 export function cleanHTML() {
+  const ulContainer = document.querySelector('.list');
   while (ulContainer.firstChild) {
     ulContainer.removeChild(ulContainer.firstChild);
   }

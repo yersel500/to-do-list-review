@@ -1,9 +1,10 @@
 import './style.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-import { taskInput, ulContainer, btndeleteTask } from './modules/selectors';
+import { taskInput, btndeleteTask } from './modules/selectors';
 import {
-  objTask, listofTasks, newTask, printTask, enableEdition,
+  objTask, listofTasks, newTask, enableEdition,
 } from './modules/ui';
+import printTask from './modules/addTask';
 
 function saveTask(e) {
   objTask[e.target.name] = e.target.value;
@@ -21,6 +22,7 @@ eventListeners();
 
 document.addEventListener('keypress', newTask);
 
+const ulContainer = document.querySelector('.list');
 // event on list container
 ulContainer.addEventListener('click', (e) => {
   const index = Number(e.target.parentElement.classList[0]);
