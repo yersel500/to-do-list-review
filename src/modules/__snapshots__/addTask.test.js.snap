@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test addTask function Add the object task and check if it works 1`] = `
+ArrayTask {
+  "tasks": Array [
+    Object {
+      "complete": false,
+      "description": "task1",
+      "index": 0,
+    },
+  ],
+}
+`;
