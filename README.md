@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://yersel500.github.io/to-do-list/dist)
+[Live Demo Link](https://yersel500.github.io/to-do-list-review/dist)
 
 ![Desktop Version](https://image.prntscr.com/image/-Q5uLtyzSy-NR1zYpAy2nA.png)
 ![Mobile Version](https://image.prntscr.com/image/6LxVt0m8TzeeZgwKlktsyg.png)
