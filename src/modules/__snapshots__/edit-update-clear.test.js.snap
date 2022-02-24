@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test editTask function Edit the object task and check if it works 1`] = `
+ArrayTask {
+  "tasks": Array [
+    Object {
+      "complete": false,
+      "description": "changed task",
+      "index": 0,
+    },
+  ],
+}
+`;

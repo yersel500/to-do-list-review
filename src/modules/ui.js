@@ -80,3 +80,8 @@ export function newTask(e) {
     taskInput.value = '';
   }
 }
+
+//change status function
+export function changeStatus(obj) {
+  obj.complete = !(obj.complete);
+}
