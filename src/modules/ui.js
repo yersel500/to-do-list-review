@@ -1,6 +1,5 @@
 import { ulContainer, taskInput } from './selectors';
 import ArrayTask from './class-methods';
-import deleteIcon from '../assets/delete-icon.svg';
 
 // constant variables
 const CHECK = 'fa-square-check';
@@ -42,7 +41,7 @@ export function printTask({ tasks }) {
 
     const taskContainer = document.createElement('li');
     taskContainer.classList.add(`${index}`, 'list-unit', `${complete}`);
-    taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><img src=${deleteIcon} alt='Trash' class='fa-trash-can'><i class="fas fa-ellipsis-v dots"></i>`;
+    taskContainer.innerHTML = `<i class="fa-regular ${DONE}"></i><input type='text' value = '${description}' class='specific-${index} ${LINE} today-task' readonly><i class="fa-regular fa-trash-can"></i><i class="fas fa-ellipsis-v dots"></i>`;
 
     ulContainer.appendChild(taskContainer);
   });
@@ -79,4 +78,8 @@ export function newTask(e) {
 
     taskInput.value = '';
   }
+}
+
+export function changeStatus(obj) {
+  obj.complete = !(obj.complete);
 }
