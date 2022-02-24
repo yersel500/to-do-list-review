@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Clear all completed tasks All completed tasks should be removed. 1`] = `
+ArrayTask {
+  "tasks": Array [
+    Object {
+      "complete": false,
+      "description": "task3",
+      "index": 1,
+    },
+  ],
+}
+`;
+
+exports[`Clear all completed tasks The status of task should change between false/true 1`] = `
+ArrayTask {
+  "tasks": Array [
+    Object {
+      "complete": false,
+      "description": "task3",
+      "index": 1,
+    },
+  ],
+}
+`;
+
 exports[`Test editTask function Edit the object task and check if it works 1`] = `
 ArrayTask {
   "tasks": Array [
