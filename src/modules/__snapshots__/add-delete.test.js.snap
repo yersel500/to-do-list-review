@@ -11,3 +11,15 @@ ArrayTask {
   ],
 }
 `;
+
+exports[`Test deleteTask function remove the object task and check if it works 1`] = `
+ArrayTask {
+  "tasks": Array [
+    Object {
+      "complete": false,
+      "description": "task2",
+      "index": 1,
+    },
+  ],
+}
+`;
