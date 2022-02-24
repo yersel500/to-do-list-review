@@ -2,7 +2,7 @@ import './style.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import { taskInput, ulContainer, btndeleteTask } from './modules/selectors';
 import {
-  objTask, listofTasks, newTask, printTask, enableEdition, changeStatus
+  objTask, listofTasks, newTask, printTask, enableEdition, changeStatus,
 } from './modules/ui';
 
 function saveTask(e) {
@@ -31,17 +31,15 @@ ulContainer.addEventListener('click', (e) => {
   } else if (e.target.classList.contains(`specific-${index}`)) {
     enableEdition(listofTasks.tasks[index - 1]);
     listofTasks.saveLocalStorage();
-  } else { 
-    if (e.target.classList.contains('fa-square')) {
+  } else if (e.target.classList.contains('fa-square')) {
     changeStatus(listofTasks.tasks[index - 1]);
     printTask(listofTasks);
     listofTasks.saveLocalStorage();
-    } else if (e.target.classList.contains('fa-square-check')) {
+  } else if (e.target.classList.contains('fa-square-check')) {
     changeStatus(listofTasks.tasks[index - 1]);
     printTask(listofTasks);
     listofTasks.saveLocalStorage();
-    } 
-    }
+  }
 });
 
 // Delete completed tasks
